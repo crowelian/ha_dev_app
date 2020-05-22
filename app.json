@@ -1,9 +1,9 @@
 {
   "expo": {
-    "name": "my-new-expo-app",
-    "slug": "my-new-expo-app",
+    "name": "Harri Ahola Developer",
+    "slug": "harri-ahola-developer",
     "platforms": [
-      "ios",
+      
       "android",
       "web"
     ],
@@ -24,6 +24,10 @@
     ],
     "ios": {
       "supportsTablet": true
+    },
+    "android": {
+      "package": "com.harriahola.harriaholadeveloper",
+      "versionCode": 1
     },
     "web": {
       "favicon": "./assets/images/favicon.png"

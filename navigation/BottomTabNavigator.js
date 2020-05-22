@@ -20,16 +20,16 @@ export default function BottomTabNavigator({ navigation, route }) {
         name="Home"
         component={HomeScreen}
         options={{
-          title: 'Get Started',
-          tabBarIcon: ({ focused }) => <TabBarIcon focused={focused} name="md-code-working" />,
+          title: 'Home',
+          tabBarIcon: ({ focused }) => <TabBarIcon focused={focused} name="ios-home" />,
         }}
       />
       <BottomTab.Screen
-        name="Links"
+        name="Info"
         component={LinksScreen}
         options={{
-          title: 'Resources',
-          tabBarIcon: ({ focused }) => <TabBarIcon focused={focused} name="md-book" />,
+          title: 'Info',
+          tabBarIcon: ({ focused }) => <TabBarIcon focused={focused} name="md-information-circle-outline" />,
         }}
       />
     </BottomTab.Navigator>
@@ -39,10 +39,16 @@ export default function BottomTabNavigator({ navigation, route }) {
 function getHeaderTitle(route) {
   const routeName = route.state?.routes[route.state.index]?.name ?? INITIAL_ROUTE_NAME;
 
+  var titles = ['I am Harri Ahola', 'Harri Ahola', 'Home', 'Harri Ahola a Developer App', 
+  'I Am Harri Ahola a Developer', 'This was made in 2020!'];
+  var thing = titles[Math.floor(Math.random()*titles.length)];
+  console.log(thing);
+
   switch (routeName) {
     case 'Home':
-      return 'How to get started';
-    case 'Links':
-      return 'Links to learn more';
+      let text = thing;
+      return text;
+    case 'Info':
+      return 'Info and links';
   }
 }
