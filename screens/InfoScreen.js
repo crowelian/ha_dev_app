@@ -2,86 +2,33 @@ import * as WebBrowser from 'expo-web-browser';
 import * as React from 'react';
 import { Image, Platform, StyleSheet, Text, TouchableOpacity, View, Button } from 'react-native';
 import { ScrollView } from 'react-native-gesture-handler';
-import { NavigationContainer } from '@react-navigation/native';
-import { createStackNavigator } from '@react-navigation/stack';
 
 import { MonoText } from '../components/StyledText';
 
-export default function HomeScreen( {navigation} ) {
+export default function InfoScreen() {
   return (
     <View style={styles.container}>
       <ScrollView style={styles.container} contentContainerStyle={styles.contentContainer}>
-        <View style={styles.welcomeContainer}>
-          <Image
-            source={
-              __DEV__
-                ? require('../assets/images/icon-dev.png')
-                : require('../assets/images/icon-prod.png')
-            }
-            style={styles.welcomeImage}
-          />
-        </View>
-
-        <View style={styles.getStartedContainer}>
-          <DevelopmentModeNotice />
-
-          <Text style={styles.getStartedText}>Welcome to Harri's test app! </Text>
-
-            <Button
-            title="Go to info page!"
-            onPress={() => navigation.navigate('InfoScreen')}
-            />
-        </View>
+        
 
         <View style={styles.helpContainer}>
-          <TouchableOpacity onPress={handleHelpPress} style={styles.helpLink}>
-            <Text style={styles.helpLinkText}>More info about me!</Text>
-          </TouchableOpacity>
+          
+            <Text >I AM INFO SCREEN!</Text>
+          
         </View>
       </ScrollView>
 
-      <View style={styles.tabBarInfoContainer}>
-        <Text style={styles.tabBarInfoText}>more to come</Text>
-      </View>
+      
     </View>
   );
 }
-
-HomeScreen.navigationOptions = {
+/*
+InfoScreen.navigationOptions = {
   header: null,
 };
+*/
 
-function DevelopmentModeNotice() {
-  if (__DEV__) {
-    const learnMoreButton = (
-      <Text onPress={handleLearnMorePress} style={styles.helpLinkText}>
-        learn more
-      </Text>
-    );
 
-    return (
-      <Text style={styles.developmentModeText}>
-        DEBUG: Development mode! 
-      </Text>
-    );
-  } else {
-    return (
-      <Text style={styles.developmentModeText}>
-        DEBUG: Production mode!
-      </Text>
-    );
-  }
-}
-
-function handleLearnMorePress() {
-  WebBrowser.openBrowserAsync('https://www.harriahola.com');
-}
-
-function handleHelpPress() {
-  WebBrowser.openBrowserAsync(
-    'https://www.harriahola.com'
-  );
-}
 
 const styles = StyleSheet.create({
   container: {
