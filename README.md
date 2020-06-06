@@ -13,3 +13,5 @@ yarn add expo
 
 npm start
 
+...
+
