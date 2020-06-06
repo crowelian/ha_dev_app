@@ -14,4 +14,6 @@ yarn add expo
 npm start
 
 ...
+Build:
+expo build:android
 
